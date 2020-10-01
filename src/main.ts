@@ -1,3 +1,5 @@
+import {fibonacci} from "./test";
+
 const canvas = document.createElement('canvas');
 const c      = canvas.getContext('2d');
 
@@ -15,18 +17,21 @@ let   mouse  = { x: 0, y: 0 };
 addEventListener('mousemove', (event) => {
     mouse.x = event.clientX;
     mouse.y = event.clientY;
-})
+
+    fibonacci(1000);
+});
 
 addEventListener('resize', () => {
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
-
+    fibonacci(1000);
     init();
 })
 
 let circle: Array<Circle> = [];
 
 function init() {
+    fibonacci(1000);
     circle = [];
     for (let i = 0; i < 200; i++) {
         let radius: number = Utils.randomIntFromRange(15, 25);
